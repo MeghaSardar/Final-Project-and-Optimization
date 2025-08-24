@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DigiArt Kids</title>
+  <link rel="stylesheet" href="6.css">
+</head>
+<body>
+  <header>
+    <h2>🎨 DigiArt Kids</h2>
+    <nav>
+      <button onclick="navigateTo('home')">Home</button>
+      <button onclick="navigateTo('learn')">Learn</button>
+      <button onclick="navigateTo('practice')">Practice</button>
+      <button onclick="navigateTo('gallery')">Gallery</button>
+    </nav>
+  </header>
+
+  <!-- HOME PAGE -->
+  <section id="home" class="page active">
+    <div class="hero">
+      <h1>🎨 Welcome to DigiArt Kids</h1>
+      <p>Learn drawing step by step, explore creativity, and save your masterpieces.</p>
+      <button onclick="navigateTo('learn')">🚀 Start Learning</button>
+    </div>
+    <div class="features">
+      <div class="feature-card"><h2>👩‍🎨 Learn</h2><p>Step-by-step tutorials designed for kids.</p></div>
+      <div class="feature-card"><h2>🖌 Practice</h2><p>Draw with brushes, colors, and shapes.</p></div>
+      <div class="feature-card"><h2>📸 Gallery</h2><p>Save and showcase your artwork.</p></div>
+    </div>
+  </section>
+
+  <!-- LEARN PAGE -->
+  <section id="learn" class="page">
+    <h1>📘 Learn Digital Art</h1>
+    <div class="lesson-container">
+      <div class="lesson-card" onclick="openLesson(1)">
+        <img src="..//task6/6.practice.png" alt="Drawing Basics">
+        <h2>Lesson 1: Basics</h2>
+        <p>Learn how to draw simple lines, shapes, and patterns.</p>
+      </div>
+      <div class="lesson-card" onclick="openLesson(2)">
+        <img src="..//task6/6.colors.png" alt="Colors">
+        <h2>Lesson 2: Colors</h2>
+        <p>Understand color mixing and practice with brushes.</p>
+      </div>
+      <div class="lesson-card" onclick="openLesson(3)">
+        <img src="..//task6/6.cartoons.png" alt="Cartoon Drawing">
+        <h2>Lesson 3: Fun Characters</h2>
+        <p>Create your own cartoon characters step by step!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LESSON DETAILS -->
+  <section id="lessonDetail" class="page">
+    <div class="lesson-detail">
+      <h1 id="lessonTitle"></h1>
+      <p id="lessonContent"></p>
+      <button class="btn-practice" onclick="startPractice(currentLesson)">🎨 Start Practice</button>
+      <button class="btn-quiz" onclick="startQuiz(currentLesson)">📝 Take Quiz</button>
+      <button class="btn-back" onclick="navigateTo('learn')">⬅ Back to Lessons</button>
+    </div>
+  </section>
+
+  <!-- QUIZ PAGE -->
+  <section id="quizPage" class="page">
+    <div class="quiz-container">
+      <h2 id="quizTitle"></h2>
+      <form id="quizForm"></form>
+<button id="submitBtn" onclick="submitQuiz()">Submit Quiz</button>
+
+      <p id="quizResult"></p>
+    <button id="backBtn" class="btn-back" onclick="navigateTo('learn')">⬅ Back to Lessons</button>
+    </div>
+    
+  </section>
+
+  <!-- PRACTICE PAGE -->
+  <section id="practice" class="page">
+    <h1>🖌 Practice Your Drawing</h1>
+    <div id="practiceInstruction" style="font-weight:bold; margin:10px 0; color:#ff5252;"></div>
+    <canvas id="drawCanvas" width="600" height="400"></canvas>
+    <div class="tools">
+      <input type="color" id="colorPicker" value="#000000">
+      <input type="range" id="brushSize" min="1" max="20" value="5">
+      <button onclick="clearCanvas()">Clear</button>
+      <button onclick="saveDrawing()">Save to Gallery</button>
+      <button onclick="nextStep()">➡ Next Step</button>
+    </div>
+  </section>
+
+  <!-- GALLERY PAGE -->
+  <section id="gallery" class="page">
+    <h1>📸 My Art Gallery</h1>
+    <p>Your saved artworks appear here. Click to view bigger.</p>
+    <div id="galleryGrid" class="gallery-grid"></div>
+  </section>
+
+  <script src="6.js"></script>
+  
+</body>
+</html>
